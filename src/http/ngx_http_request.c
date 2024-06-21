@@ -1181,7 +1181,7 @@ ngx_http_process_request_line(ngx_event_t *rev)
                 break;
             }
 
-
+	    printf("HTTP request line: \"%.*s\"\n", (int)r->request_line.len, r->request_line.data);
             if (ngx_list_init(&r->headers_in.headers, r->pool, 20,
                               sizeof(ngx_table_elt_t))
                 != NGX_OK)
